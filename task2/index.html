@@ -1,0 +1,153 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <nav class="flex justify-between items-center border-b shadow-md h-16">
+        <div class="w-80 border-gray-200">
+            <div class="ml-8 flex items-center h-12 border-r-2">
+                <img src="swc.jpg" alt="swc" class="w-8">
+                <span class="font-bold ml-2">Movies</span>
+            </div>
+        </div>
+
+        <div class="float-right border-l-2 border-gray-200 pl-8 mr-8 h-12 flex items-center">
+            <i id="search_icon" onclick = "search2()" class="fa-solid fa-magnifying-glass"></i>
+            <input class="w-64 px-4 py-4 mx-3 h-10 rounded-md" type="text" name="quick_search" id="quick_search" placeholder='Quick Search'>
+        </div>
+    </nav><br>
+ 
+    <div id="container" class="flex h-auto"> <!-- because of h-auto the gray area runs throughout the vertical screen  -->
+        <div class="w-80 bg-gray-200"><br>
+                <ul class="w-64 float-right">
+                    <li class="pl-8 py-4 bg-white">Search Results</li>
+                    <li class="pl-8 py-4">All Team</li>
+                    <li class="pl-8 py-4">Code</li>
+                    <li class="pl-8 py-4">Developers</li>
+                    <li class="pl-8 py-4">Designers</li>
+                    <li class="pl-8 py-4">Mentors</li>
+                </ul>
+                <div class="w-64">
+                    <button class="text-xl cursor-pointer shadow-lg bg-black text-white px-10 py-4 rounded-xl fixed left-16 bottom-20">+ADD</button>
+                </div>
+        </div>
+        
+        
+        <div id="bunch" class="flex flex-wrap flex-row ml-10 mr-10 mb-8 gap-16 justify-evenly h-fit">
+        <!--    <div class="text-center rounded-lg bg-gray-100 shadow-md w-80 h-80"><br>
+                <img class="rounded-full h-24 w-24 m-auto mb-4" src="man.jpg" alt="man">
+                <p class="font-bold mb-2">Teodoro Luck</p>
+                <p class="font-semibold mb-2">Product Designer at Google</p>
+                <p class="text-blue-500 mb-2">@Core</p>
+                <p class="text-gray-500 mb-3">SWC 2018-2021</p>
+                <span class="inline text-blue-500 text-xl">
+                    <i class="fa-solid fa-comment-dots mr-2"></i>                <i class="fa-solid fa-phone"></i>
+                </span>
+            </div>
+            <div class="text-center rounded-lg bg-gray-100 shadow-md w-80 h-80"><br>
+                <img class="rounded-full h-24 w-24 m-auto mb-4" src="man.jpg" alt="man">
+                <p class="font-bold mb-2">Teodoro Luck</p>
+                <p class="font-semibold mb-2">Product Designer at Google</p>
+                <p class="text-blue-500 mb-2">@Core</p>
+                <p class="text-gray-500 mb-3">SWC 2018-2021</p>
+                <span class="inline text-blue-500 text-xl">
+                    <i class="fa-solid fa-comment-dots mr-2"></i>                <i class="fa-solid fa-phone"></i>
+                </span>
+            </div>
+            <div class="text-center rounded-lg bg-gray-100 shadow-md w-80 h-80"><br>
+                <img class="rounded-full h-24 w-24 m-auto mb-4" src="man.jpg" alt="man">
+                <p class="font-bold mb-2">Teodoro Luck</p>
+                <p class="font-semibold mb-2">Product Designer at Google</p>
+                <p class="text-blue-500 mb-2">@Core</p>
+                <p class="text-gray-500 mb-3">SWC 2018-2021</p>
+                <span class="inline text-blue-500 text-xl">
+                    <i class="fa-solid fa-comment-dots mr-2"></i>                <i class="fa-solid fa-phone"></i>
+                </span>
+            </div>
+            <div class="text-center rounded-lg bg-gray-100 shadow-md w-80 h-80"><br>
+                <img class="rounded-full h-24 w-24 m-auto mb-4" src="man.jpg" alt="man">
+                <p class="font-bold mb-2">Teodoro Luck</p>
+                <p class="font-semibold mb-2">Product Designer at Google</p>
+                <p class="text-blue-500 mb-2">@Core</p>
+                <p class="text-gray-500 mb-3">SWC 2018-2021</p>
+                <span class="inline text-blue-500 text-xl">
+                    <i class="fa-solid fa-comment-dots mr-2"></i>                <i class="fa-solid fa-phone"></i>
+                </span>
+            </div>
+            <div class="text-center rounded-lg bg-gray-100 shadow-md w-80 h-80"><br>
+                <img class="rounded-full h-24 w-24 m-auto mb-4" src="man.jpg" alt="man">
+                <p class="font-bold mb-2">Teodoro Luck</p>
+                <p class="font-semibold mb-2">Product Designer at Google</p>
+                <p class="text-blue-500 mb-2">@Core</p>
+                <p class="text-gray-500 mb-3">SWC 2018-2021</p>
+                <span class="inline text-blue-500 text-xl">
+                    <i class="fa-solid fa-comment-dots mr-2"></i>                <i class="fa-solid fa-phone"></i>
+                </span>
+            </div>
+            <div class="text-center rounded-lg bg-gray-100 shadow-md w-80 h-80"><br>
+                <img class="rounded-full h-24 w-24 m-auto mb-4" src="man.jpg" alt="man">
+                <p class="font-bold mb-2">Teodoro Luck</p>
+                <p class="font-semibold mb-2">Product Designer at Google</p>
+                <p class="text-blue-500 mb-2">@Core</p>
+                <p class="text-gray-500 mb-3">SWC 2018-2021</p>
+                <span class="inline text-blue-500 text-xl">
+                    <i class="fa-solid fa-comment-dots mr-2"></i>                <i class="fa-solid fa-phone"></i>
+                </span>
+            </div>
+            <div class="text-center rounded-lg bg-gray-100 shadow-md w-80 h-80"><br>
+                <img class="rounded-full h-24 w-24 m-auto mb-4" src="man.jpg" alt="man">
+                <p class="font-bold mb-2">Teodoro Luck</p>
+                <p class="font-semibold mb-2">Product Designer at Google</p>
+                <p class="text-blue-500 mb-2">@Core</p>
+                <p class="text-gray-500 mb-3">SWC 2018-2021</p>
+                <span class="inline text-blue-500 text-xl">
+                    <i class="fa-solid fa-comment-dots mr-2"></i>                <i class="fa-solid fa-phone"></i>
+                </span>
+            </div>
+            <div class="text-center rounded-lg bg-gray-100 shadow-md w-80 h-80"><br>
+                <img class="rounded-full h-24 w-24 m-auto mb-4" src="man.jpg" alt="man">
+                <p class="font-bold mb-2">Teodoro Luck</p>
+                <p class="font-semibold mb-2">Product Designer at Google</p>
+                <p class="text-blue-500 mb-2">@Core</p>
+                <p class="text-gray-500 mb-3">SWC 2018-2021</p>
+                <span class="inline text-blue-500 text-xl">
+                    <i class="fa-solid fa-comment-dots mr-2"></i>                <i class="fa-solid fa-phone"></i>
+                </span>
+            </div>
+            <div class="text-center rounded-lg bg-gray-100 shadow-md w-80 h-80"><br>
+                <img class="rounded-full h-24 w-24 m-auto mb-4" src="man.jpg" alt="man">
+                <p class="font-bold mb-2">Teodoro Luck</p>
+                <p class="font-semibold mb-2">Product Designer at Google</p>
+                <p class="text-blue-500 mb-2">@Core</p>
+                <p class="text-gray-500 mb-3">SWC 2018-2021</p>
+                <span class="inline text-blue-500 text-xl">
+                    <i class="fa-solid fa-comment-dots mr-2"></i>                <i class="fa-solid fa-phone"></i>
+                </span>
+            </div>-->
+        </div> 
+    </div>
+   
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("quick_search").onkeypress = function (evt) {
+        evt = (evt) ? evt : (window.event) ? event : null;
+        if (evt) {
+            var charCode = (evt.charCode) ? evt.charCode :((evt.keyCode) ? evt.keyCode :((evt.which) ? evt.which : 0));
+            if (charCode == 13) {
+                search2();
+            }
+        }
+    }
+    </script>
+
+</body>
+</html>
