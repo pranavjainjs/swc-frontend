@@ -5,6 +5,7 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const searchURL = BASE_URL + '/search/movie?' + API_KEY;
 var list;
 var flag = 0;
+var page = 2;
 
 fetch(API_URL)
     .then(response => response.json())
@@ -32,8 +33,6 @@ function assignData(list) {
         const title = document.createElement('h2');
         const rating = document.createElement('p'); 
         const link = 'https://www.imdb.com/find?q=' + list[i].title.replace(/ /g, '+') + '&ref_=nv_sr_sm';
-        const texttt = document.createElement('p');
-        texttt.innerText = link;
         // const desc = document.createElement('div');
         // const overview = document.createElement('p');
 
@@ -72,26 +71,29 @@ function assignData(list) {
 
 async function search2(){
 
-    if(document.getElementById('quick_search').value === "") {
+    if(document.getElementById('quick_search').value === '') {
         document.getElementById('quick_search').placeholder = "enter a query";
         defaultList();
         flag = 0;
+        page = 2;
         return;
     }
 
-    document.getElementById('bunch').innerHTML = '';
-    let query = document.getElementById('quick_search').value.trim().toLowerCase();
-    const searchQueryURL = searchURL+'&query='+query;
-    let mysearchresult = await fetch(searchQueryURL);
-    mysearchresult = await mysearchresult.json();
-    // console.log(mysearchresult);
-    assignData(mysearchresult.results);
-    flag = 1;
-    return;
+    else{
+        document.getElementById('bunch').innerHTML = '';
+        let query = document.getElementById('quick_search').value.trim().toLowerCase();
+        const searchQueryURL = searchURL+'&query='+query;
+        let mysearchresult = await fetch(searchQueryURL);
+        mysearchresult = await mysearchresult.json();
+        // console.log(mysearchresult);
+        assignData(mysearchresult.results);
+        flag = 1;
+        page = 2;
+        return;
+    }
 }
 
 const addbtn = document.getElementById('add');
-var page = 2;
 
 addbtn.onclick = () => {
     if(flag === 0){
