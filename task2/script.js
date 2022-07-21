@@ -7,6 +7,13 @@ var list;
 var flag = 0;
 var page = 2;
 
+window.alert('do check the following features:\n'
++ '1. hover on image and card\n'
++ '2. click on movie title\n'
++ '3. click +add button\n'
++ '4. press enter while searching in searchbox'
+)
+
 fetch(API_URL)
     .then(response => response.json())
     .then(data => {
