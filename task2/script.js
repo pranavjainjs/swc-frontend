@@ -75,6 +75,7 @@ async function search2(){
     if(document.getElementById('quick_search').value === "") {
         document.getElementById('quick_search').placeholder = "enter a query";
         defaultList();
+        flag = 0;
         return;
     }
 
